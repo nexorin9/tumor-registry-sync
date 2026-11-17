@@ -1,0 +1,1771 @@
+{
+  "schemaVersion": "1",
+  "generator": "scripts/gen-samples",
+  "generatedWith": {
+    "rows": 120,
+    "seed": 20261101
+  },
+  "conventions": {
+    "首次入院日": "min(encounters[].start) 的本地日期；多条就诊取最早一次（经验推断）",
+    "本次就诊开始": "最近一次 encounter 的 start（经验推断）",
+    "分期": "归并到受控编码后与院内值比较；归并不成功则不产出操作，标「需人工判定」",
+    "治疗方案": "归并到受控编码后与院内值比较；归并不成功则不产出操作，标「需人工判定」",
+    "随访电话": "人工补充列，只读不覆盖，不参与比对",
+    "生活方式备注": "人工补充列，只读不覆盖，不参与比对",
+    "操作类型": "登记侧为空而院内有值 = add；两侧都有值但不同 = replace；登记侧有值而院内缺失 = remove",
+    "expectedStatus": "有归并不成功的字段 = 需人工判定；否则有差异 = 待确认；无差异 = 无需确认",
+    "field": "field 用口径字段名（与列映射配置的 field 一致）；引擎输出的 path 由三段映射决定，比对时先映射回口径字段名"
+  },
+  "rows": [
+    {
+      "registryId": "REG-0001",
+      "rowNumber": 2,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0002",
+      "rowNumber": 3,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0003",
+      "rowNumber": 4,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0004",
+      "rowNumber": 5,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "I",
+          "newValue": "IVC",
+          "sheetRaw": "Ⅰ期"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0005",
+      "rowNumber": 6,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "术后辅助化疗",
+          "newValue": "靶向治疗",
+          "sheetRaw": "术后 化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0006",
+      "rowNumber": 7,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "II",
+          "newValue": "IVB",
+          "sheetRaw": "Ⅱ"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "新辅助化疗",
+          "newValue": "术后辅助化疗",
+          "sheetRaw": "新辅助化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0007",
+      "rowNumber": 8,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IIIB",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0008",
+      "rowNumber": 9,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "放疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0009",
+      "rowNumber": 10,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "III",
+          "newValue": null,
+          "sheetRaw": "III"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0010",
+      "rowNumber": 11,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "姑息治疗",
+          "newValue": null,
+          "sheetRaw": "姑息化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0011",
+      "rowNumber": 12,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0012",
+      "rowNumber": 13,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0013",
+      "rowNumber": 14,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0014",
+      "rowNumber": 15,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIA",
+          "newValue": "IIIC",
+          "sheetRaw": "ⅢA"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0015",
+      "rowNumber": 16,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "免疫治疗",
+          "newValue": "新辅助化疗",
+          "sheetRaw": "免疫治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0016",
+      "rowNumber": 17,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIA",
+          "newValue": "IIIC",
+          "sheetRaw": "IIIA期"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "免疫治疗",
+          "newValue": "靶向治疗",
+          "sheetRaw": "免疫检查点抑制剂治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0017",
+      "rowNumber": 18,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "I",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0018",
+      "rowNumber": 19,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "姑息治疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0019",
+      "rowNumber": 20,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "IIIB",
+          "newValue": null,
+          "sheetRaw": "ⅢB"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0020",
+      "rowNumber": 21,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "靶向治疗",
+          "newValue": null,
+          "sheetRaw": "分子靶向治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0021",
+      "rowNumber": 22,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0022",
+      "rowNumber": 23,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0023",
+      "rowNumber": 24,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0024",
+      "rowNumber": 25,
+      "scenario": "replaceStage",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIC",
+          "newValue": "IVB",
+          "sheetRaw": "IIIC"
+        }
+      ],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0025",
+      "rowNumber": 26,
+      "scenario": "replacePlan",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0026",
+      "rowNumber": 27,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIC",
+          "newValue": "IVA",
+          "sheetRaw": "III C"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "术后辅助化疗",
+          "newValue": "靶向治疗",
+          "sheetRaw": "术后辅助化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0027",
+      "rowNumber": 28,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IIIA",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0028",
+      "rowNumber": 29,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "免疫治疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0029",
+      "rowNumber": 30,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "IV",
+          "newValue": null,
+          "sheetRaw": "IV期"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0030",
+      "rowNumber": 31,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "术后辅助化疗",
+          "newValue": null,
+          "sheetRaw": "术后 化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0031",
+      "rowNumber": 32,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0032",
+      "rowNumber": 33,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0033",
+      "rowNumber": 34,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0034",
+      "rowNumber": 35,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IVB",
+          "newValue": "I",
+          "sheetRaw": "ⅣB"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0035",
+      "rowNumber": 36,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "姑息治疗",
+          "newValue": "化疗",
+          "sheetRaw": "姑息化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0036",
+      "rowNumber": 37,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IVC",
+          "newValue": "IVA",
+          "sheetRaw": "ⅣＣ"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "姑息治疗",
+          "newValue": "化疗",
+          "sheetRaw": "姑息性治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0037",
+      "rowNumber": 38,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IIIB",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0038",
+      "rowNumber": 39,
+      "scenario": "addPlan",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "免疫治疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0039",
+      "rowNumber": 40,
+      "scenario": "removeStage",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0040",
+      "rowNumber": 41,
+      "scenario": "removePlan",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "免疫治疗",
+          "newValue": null,
+          "sheetRaw": "免疫治疗"
+        }
+      ],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0041",
+      "rowNumber": 42,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0042",
+      "rowNumber": 43,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0043",
+      "rowNumber": 44,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0044",
+      "rowNumber": 45,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "I",
+          "newValue": "III",
+          "sheetRaw": "Ⅰ"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0045",
+      "rowNumber": 46,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "靶向治疗",
+          "newValue": "根治术",
+          "sheetRaw": "分子靶向治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0046",
+      "rowNumber": 47,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "I",
+          "newValue": "IV",
+          "sheetRaw": "Ⅰ期"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "化疗",
+          "newValue": "姑息治疗",
+          "sheetRaw": "化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0047",
+      "rowNumber": 48,
+      "scenario": "addStage",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IIIC",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0048",
+      "rowNumber": 49,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "靶向治疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0049",
+      "rowNumber": 50,
+      "scenario": "removeStage",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "II",
+          "newValue": null,
+          "sheetRaw": "II期"
+        }
+      ],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0050",
+      "rowNumber": 51,
+      "scenario": "removePlan",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0051",
+      "rowNumber": 52,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0052",
+      "rowNumber": 53,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0053",
+      "rowNumber": 54,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0054",
+      "rowNumber": 55,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "III",
+          "newValue": "IVA",
+          "sheetRaw": "Ⅲ期"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0055",
+      "rowNumber": 56,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "术后辅助化疗",
+          "newValue": "免疫治疗",
+          "sheetRaw": "术后 化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0056",
+      "rowNumber": 57,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIA",
+          "newValue": "IVB",
+          "sheetRaw": "ⅢA"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "新辅助化疗",
+          "newValue": "姑息治疗",
+          "sheetRaw": "新辅助化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0057",
+      "rowNumber": 58,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "I",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0058",
+      "rowNumber": 59,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "化疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0059",
+      "rowNumber": 60,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "IIIA",
+          "newValue": null,
+          "sheetRaw": "ⅢＡ"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0060",
+      "rowNumber": 61,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "姑息治疗",
+          "newValue": null,
+          "sheetRaw": "姑息化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0061",
+      "rowNumber": 62,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0062",
+      "rowNumber": 63,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0063",
+      "rowNumber": 64,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0064",
+      "rowNumber": 65,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIB",
+          "newValue": "IVB",
+          "sheetRaw": "ⅢＢ"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0065",
+      "rowNumber": 66,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "免疫治疗",
+          "newValue": "术后辅助化疗",
+          "sheetRaw": "免疫治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0066",
+      "rowNumber": 67,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIC",
+          "newValue": "IIIA",
+          "sheetRaw": "IIIC"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "免疫治疗",
+          "newValue": "根治术",
+          "sheetRaw": "免疫检查点抑制剂治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0067",
+      "rowNumber": 68,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IIIA",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0068",
+      "rowNumber": 69,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "放疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0069",
+      "rowNumber": 70,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "IV",
+          "newValue": null,
+          "sheetRaw": "IV"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0070",
+      "rowNumber": 71,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "靶向治疗",
+          "newValue": null,
+          "sheetRaw": "分子靶向治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0071",
+      "rowNumber": 72,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0072",
+      "rowNumber": 73,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0073",
+      "rowNumber": 74,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0074",
+      "rowNumber": 75,
+      "scenario": "replaceStage",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IVA",
+          "newValue": "IIIA",
+          "sheetRaw": "ⅣA"
+        }
+      ],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0075",
+      "rowNumber": 76,
+      "scenario": "replacePlan",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0076",
+      "rowNumber": 77,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IVB",
+          "newValue": "I",
+          "sheetRaw": "ⅣB"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "术后辅助化疗",
+          "newValue": "根治术",
+          "sheetRaw": "术后辅助化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0077",
+      "rowNumber": 78,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IVA",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0078",
+      "rowNumber": 79,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "免疫治疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0079",
+      "rowNumber": 80,
+      "scenario": "removeStage",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0080",
+      "rowNumber": 81,
+      "scenario": "removePlan",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "术后辅助化疗",
+          "newValue": null,
+          "sheetRaw": "术后 化疗"
+        }
+      ],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0081",
+      "rowNumber": 82,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0082",
+      "rowNumber": 83,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0083",
+      "rowNumber": 84,
+      "scenario": "same",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0084",
+      "rowNumber": 85,
+      "scenario": "replaceStage",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "分期"
+      ]
+    },
+    {
+      "registryId": "REG-0085",
+      "rowNumber": 86,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "姑息治疗",
+          "newValue": "放疗",
+          "sheetRaw": "姑息化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0086",
+      "rowNumber": 87,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "I",
+          "newValue": "II",
+          "sheetRaw": "Ⅰ"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "姑息治疗",
+          "newValue": "放疗",
+          "sheetRaw": "姑息性治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0087",
+      "rowNumber": 88,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "II",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0088",
+      "rowNumber": 89,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "化疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0089",
+      "rowNumber": 90,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "II",
+          "newValue": null,
+          "sheetRaw": "II"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0090",
+      "rowNumber": 91,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "免疫治疗",
+          "newValue": null,
+          "sheetRaw": "免疫治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0091",
+      "rowNumber": 92,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0092",
+      "rowNumber": 93,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0093",
+      "rowNumber": 94,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0094",
+      "rowNumber": 95,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "III",
+          "newValue": "IIIC",
+          "sheetRaw": "Ⅲ"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0095",
+      "rowNumber": 96,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "靶向治疗",
+          "newValue": "根治术",
+          "sheetRaw": "分子靶向治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0096",
+      "rowNumber": 97,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "III",
+          "newValue": "IIIC",
+          "sheetRaw": "Ⅲ期"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "化疗",
+          "newValue": "术后辅助化疗",
+          "sheetRaw": "化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0097",
+      "rowNumber": 98,
+      "scenario": "addStage",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IVC",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0098",
+      "rowNumber": 99,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "放疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0099",
+      "rowNumber": 100,
+      "scenario": "removeStage",
+      "expectedStatus": "需人工判定",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "IIIA",
+          "newValue": null,
+          "sheetRaw": "III A"
+        }
+      ],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0100",
+      "rowNumber": 101,
+      "scenario": "removePlan",
+      "expectedStatus": "需人工判定",
+      "operations": [],
+      "unmergeableFields": [
+        "治疗方案"
+      ]
+    },
+    {
+      "registryId": "REG-0101",
+      "rowNumber": 102,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0102",
+      "rowNumber": 103,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0103",
+      "rowNumber": 104,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0104",
+      "rowNumber": 105,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIB",
+          "newValue": "IVC",
+          "sheetRaw": "III B"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0105",
+      "rowNumber": 106,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "术后辅助化疗",
+          "newValue": "放疗",
+          "sheetRaw": "术后 化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0106",
+      "rowNumber": 107,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IIIB",
+          "newValue": "I",
+          "sheetRaw": "ⅢＢ"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "新辅助化疗",
+          "newValue": "化疗",
+          "sheetRaw": "新辅助化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0107",
+      "rowNumber": 108,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "III",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0108",
+      "rowNumber": 109,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "放疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0109",
+      "rowNumber": 110,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "IIIC",
+          "newValue": null,
+          "sheetRaw": "ⅢC"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0110",
+      "rowNumber": 111,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "姑息治疗",
+          "newValue": null,
+          "sheetRaw": "姑息化疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0111",
+      "rowNumber": 112,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0112",
+      "rowNumber": 113,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0113",
+      "rowNumber": 114,
+      "scenario": "same",
+      "expectedStatus": "无需确认",
+      "operations": [],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0114",
+      "rowNumber": 115,
+      "scenario": "replaceStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IV",
+          "newValue": "III",
+          "sheetRaw": "Ⅳ期"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0115",
+      "rowNumber": 116,
+      "scenario": "replacePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "免疫治疗",
+          "newValue": "姑息治疗",
+          "sheetRaw": "免疫治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0116",
+      "rowNumber": 117,
+      "scenario": "replaceBoth",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "replace",
+          "oldValue": "IVA",
+          "newValue": "IVB",
+          "sheetRaw": "ⅣA"
+        },
+        {
+          "field": "治疗方案",
+          "op": "replace",
+          "oldValue": "免疫治疗",
+          "newValue": "新辅助化疗",
+          "sheetRaw": "免疫检查点抑制剂治疗"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0117",
+      "rowNumber": 118,
+      "scenario": "addStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "IVB",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0118",
+      "rowNumber": 119,
+      "scenario": "addPlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "add",
+          "oldValue": null,
+          "newValue": "术后辅助化疗",
+          "sheetRaw": ""
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0119",
+      "rowNumber": 120,
+      "scenario": "removeStage",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "分期",
+          "op": "remove",
+          "oldValue": "IVC",
+          "newValue": null,
+          "sheetRaw": "IVC"
+        }
+      ],
+      "unmergeableFields": []
+    },
+    {
+      "registryId": "REG-0120",
+      "rowNumber": 121,
+      "scenario": "removePlan",
+      "expectedStatus": "待确认",
+      "operations": [
+        {
+          "field": "治疗方案",
+          "op": "remove",
+          "oldValue": "靶向治疗",
+          "newValue": null,
+          "sheetRaw": "分子靶向治疗"
+        }
+      ],
+      "unmergeableFields": []
+    }
+  ],
+  "blockedRows": [
+    {
+      "rowNumber": 123,
+      "registryId": null,
+      "code": "MISSING_REGISTRY_ID",
+      "reason": "登记号为空，无法与院内记录绑定"
+    },
+    {
+      "rowNumber": 124,
+      "registryId": "REG-DUP-0001",
+      "code": "DUPLICATE_REGISTRY_ID",
+      "reason": "登记号 REG-DUP-0001 在本表出现 2 次"
+    },
+    {
+      "rowNumber": 125,
+      "registryId": "REG-DUP-0001",
+      "code": "DUPLICATE_REGISTRY_ID",
+      "reason": "登记号 REG-DUP-0001 在本表出现 2 次"
+    },
+    {
+      "rowNumber": 126,
+      "registryId": "REG-9901",
+      "code": "COLUMN_COUNT_MISMATCH",
+      "reason": "该行只有 3 个单元格，表头是 5 列"
+    }
+  ],
+  "summary": {
+    "rows": 120,
+    "blocked": 4,
+    "operations": {
+      "add": 24,
+      "replace": 45,
+      "remove": 20
+    },
+    "status": {
+      "待确认": 68,
+      "无需确认": 27,
+      "需人工判定": 25
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "conditionCode": "http://loinc.org|???-tumor-registry-screening",
+  "dateWindow": null,
+  "basis": "经验推断"
+}

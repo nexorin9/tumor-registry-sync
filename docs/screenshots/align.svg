@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="278" viewBox="0 0 755 278" font-family="ui-monospace, Menlo, Monaco, 'DejaVu Sans Mono', 'PingFang SC', 'Hiragino Sans GB', monospace">
+<rect width="755" height="278" fill="#0d1117"/>
+<rect width="755" height="30" fill="#161b22"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/><circle cx="32" cy="15" r="5" fill="#ffbd2e"/><circle cx="48" cy="15" r="5" fill="#27c93f"/>
+<text x="66" y="20" fill="#8b949e" font-size="12">align — 逐字段差异 / 状态 / 建议值</text>
+<text x="14" y="46" fill="#c9d1d9" font-size="12.5" xml:space="preserve">$ node dist/cli.js align --in 登记表.csv --out-csv 结果表.csv</text>
+<text x="14" y="64" fill="#c9d1d9" font-size="12.5" xml:space="preserve">-&gt; ok=true  批次键=186e3ea1ae2c8a3b…</text>
+<text x="14" y="82" fill="#c9d1d9" font-size="12.5" xml:space="preserve">摘要：total=5 matched=4 noMatch=1 diffRows=3 pendingConfirm=4</text>
+<text x="14" y="100" fill="#c9d1d9" font-size="12.5" xml:space="preserve">逐行：登记号 | 状态 | 差异 | 操作数</text>
+<text x="14" y="118" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  REG-DEMO-001 | 待确认 | 分期：II → IIIB（修改） | ops=1  [分期:IIIB 首次入院日:2023-11-02 </text>
+<text x="14" y="136" fill="#c9d1d9" font-size="12.5" xml:space="preserve">本次就诊开始:2025-02-18 ]</text>
+<text x="14" y="154" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  REG-DEMO-002 | 待确认 | 分期：IIIA → IIIC（修改） | ops=1  [分期:IIIC 首次入院日:2024-05-2</text>
+<text x="14" y="172" fill="#c9d1d9" font-size="12.5" xml:space="preserve">0 本次就诊开始:2024-05-20 ]</text>
+<text x="14" y="190" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  REG-DEMO-003 | 待确认 | 与院内一致 | ops=0  [分期:IV ]</text>
+<text x="14" y="208" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  REG-DEMO-004 | 待确认 | 分期：I → II（修改） | ops=1  [分期:II 首次入院日:2024-08-10 本次</text>
+<text x="14" y="226" fill="#c9d1d9" font-size="12.5" xml:space="preserve">就诊开始:2024-08-10 ]</text>
+<text x="14" y="244" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  REG-DEMO-005 | 零命中 | 院内无此登记号 | ops=0  []</text>
+<text x="14" y="262" fill="#c9d1d9" font-size="12.5" xml:space="preserve">表尾回执区：批次键 / 推送时刻(未推送) / 检索参数串 / 计数(已推送=0 待确认=4 …)</text>
+</svg>

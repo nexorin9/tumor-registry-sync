@@ -1,0 +1,83 @@
+{
+  "version": "0.1.0",
+  "note": "破坏性判定规则表：把「哪些操作算破坏性」从代码里搬进一张受控规则表，改表不改代码、留版本可追溯。四类破坏性 —— 删除院内已有字段、覆盖院内非空旧值、清空关键字段、整体替换嵌套对象。三条硬规矩：① 关键字段清单取自字段口径表已声明的字段（登记号 / 首次入院日 / 本次就诊开始），加载时逐个与口径表对账，口径表里没有的字段直接报错，不虚构业务数值；② 规则按数组顺序评估，第一条命中的规则为准，因此更具体的规则排在前面；③ 非破坏性操作一律不生成 ifMatch 写前核对条件 —— 条件越多，越容易把一次正常补填拖成一次拒写。口径依据 (经验推断)：肿瘤登记的破坏性判定在院内无权威资产可依（domain/ 资产层不收录肿瘤登记条目），本表逐条标注；严禁虚构分期编码位数、目录结构或量限数字。",
+  "keyFields": ["登记号", "首次入院日", "本次就诊开始"],
+  "rules": [
+    {
+      "id": "clear-key-field",
+      "kind": "清空关键字段",
+      "match": {
+        "op": "replace",
+        "pathPattern": "**",
+        "oldValue": "non-empty",
+        "newValue": "null",
+        "fieldIsKey": true,
+        "wholeObject": false
+      },
+      "ifMatch": {
+        "required": true,
+        "pathSource": "field",
+        "valueSource": "raw-old-value"
+      },
+      "rejectConsequence": "拒写该行，标「院内已变更，需重查」，不构造请求体",
+      "note": "关键字段被清空属于不可逆改动：写前必须核对目标侧此刻仍持有表里的原值，核对不过就整行拒写。"
+    },
+    {
+      "id": "whole-object-replace",
+      "kind": "整体替换嵌套对象",
+      "match": {
+        "op": "replace",
+        "pathPattern": "**",
+        "oldValue": "non-empty",
+        "newValue": "any",
+        "fieldIsKey": false,
+        "wholeObject": true
+      },
+      "ifMatch": {
+        "required": true,
+        "pathSource": "operation",
+        "valueSource": "raw-old-value"
+      },
+      "rejectConsequence": "拒写该行，标「院内已变更，需重查」，不构造请求体",
+      "note": "整块对象被替换时，展开后的每一条子路径都可能被覆盖，因此按整块做写前核对，而不是逐个子属性各配一条条件。旧值必须非空 —— 空对象被换掉不丢东西，不算破坏。"
+    },
+    {
+      "id": "remove-existing-field",
+      "kind": "删除院内已有字段",
+      "match": {
+        "op": "remove",
+        "pathPattern": "**",
+        "oldValue": "any",
+        "newValue": "null",
+        "fieldIsKey": false,
+        "wholeObject": false
+      },
+      "ifMatch": {
+        "required": true,
+        "pathSource": "operation",
+        "valueSource": "raw-old-value"
+      },
+      "rejectConsequence": "拒写该行，标「院内已变更，需重查」，不构造请求体",
+      "note": "删除登记条目里已存在、但院内查不到对应项的字段：字段一旦删掉，表里再也读不回来，只能靠人工补录。"
+    },
+    {
+      "id": "overwrite-non-empty",
+      "kind": "覆盖院内非空旧值",
+      "match": {
+        "op": "replace",
+        "pathPattern": "**",
+        "oldValue": "non-empty",
+        "newValue": "any",
+        "fieldIsKey": false,
+        "wholeObject": false
+      },
+      "ifMatch": {
+        "required": true,
+        "pathSource": "operation",
+        "valueSource": "raw-old-value"
+      },
+      "rejectConsequence": "拒写该行，标「院内已变更，需重查」，不构造请求体",
+      "note": "覆盖登记条目里已有的非空值：写错会把登记员同事已经填好的内容盖掉，所以必须先核对目标侧还是不是原值。"
+    }
+  ]
+}

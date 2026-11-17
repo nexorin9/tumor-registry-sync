@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "basis": "经验推断",
+  "note": "受控字段口径表：比对之前先把「每个字段按什么口径算」写死。三条硬规矩 —— ① 未声明口径的列一律不参与比对，并显式标「口径未声明」，不猜、不静默跳过；② 人工补充列只读不覆盖、不参与比对、不产生任何操作；③ 派生字段必须声明取数口径（按哪条规则、取哪几次就诊），口径没声明就不算，算不出来就明说，绝不按空值参与比对（按空值参与比对等于建议「删除」）。口径依据：肿瘤登记的分期与随访字段口径在院内无权威资产可依（domain/ 资产层不收录肿瘤登记条目），本表逐项标注 (经验推断)；严禁虚构分期编码位数、目录结构或量限数字。",
+  "fields": [
+    {
+      "field": "登记号",
+      "source": "登记列",
+      "sourceColumn": "登记号",
+      "resourcePath": "Patient.identifier",
+      "description": "登记主索引（脱敏占位标识），对应院内 Patient.identifier 的 token 值；本产品按它批量检索院内权威记录。它是行的绑定键，不是待比对字段。",
+      "participatesInDiff": false,
+      "derived": false,
+      "controlledCode": false,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "分期",
+      "source": "院内资源路径",
+      "sourceColumn": "分期",
+      "resourcePath": "Condition.stage",
+      "description": "登记员填写的分期自由写法（ⅢB / IIIB / III B 等）。院内是否用 Condition.stage 承载分期以本表声明为准；归并到受控编码后与院内值比对，归并后等价即视为无差异。",
+      "participatesInDiff": true,
+      "derived": false,
+      "controlledCode": true,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "治疗方案",
+      "source": "登记列",
+      "sourceColumn": "治疗方案",
+      "resourcePath": null,
+      "description": "登记员填写的治疗方案自由写法。院内 CDR 本轮无对应资源路径，因此不参与差异比对；只做受控编码归并，归并结果只出现在「建议值」列，须登记员显式采纳才可能进入推送体。",
+      "participatesInDiff": false,
+      "derived": false,
+      "controlledCode": true,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "首次入院日",
+      "source": "派生",
+      "sourceColumn": null,
+      "resourcePath": "Encounter.period.start",
+      "description": "派生字段：所选就诊集合中 period.start 最早的一条，折算到院内本地时区后的日期。所选就诊集合按 derivedCaliber 声明的规则与筛选范围确定。",
+      "participatesInDiff": true,
+      "derived": true,
+      "controlledCode": false,
+      "humanSupplied": false,
+      "basis": "经验推断",
+      "derivedCaliber": {
+        "rule": "earliest-encounter-start",
+        "encounterFilter": null
+      }
+    },
+    {
+      "field": "本次就诊开始",
+      "source": "派生",
+      "sourceColumn": null,
+      "resourcePath": "Encounter.period.start",
+      "description": "派生字段：所选就诊集合中 period.start 最近的一条，折算到院内本地时区后的日期与时刻。",
+      "participatesInDiff": true,
+      "derived": true,
+      "controlledCode": false,
+      "humanSupplied": false,
+      "basis": "经验推断",
+      "derivedCaliber": {
+        "rule": "latest-encounter-start",
+        "encounterFilter": null
+      }
+    },
+    {
+      "field": "随访电话",
+      "source": "登记列",
+      "sourceColumn": "随访电话",
+      "resourcePath": null,
+      "description": "登记员人工补充的随访联系方式。插件只读、绝不覆盖、不参与比对；推送时如需带出，走登记专用 extension，不塞进主字段。",
+      "participatesInDiff": false,
+      "derived": false,
+      "controlledCode": false,
+      "humanSupplied": true,
+      "basis": "经验推断"
+    },
+    {
+      "field": "生活方式备注",
+      "source": "登记列",
+      "sourceColumn": "生活方式备注",
+      "resourcePath": null,
+      "description": "登记员人工补充的生活方式备注。插件只读、绝不覆盖、不参与比对；如需带出同样走登记专用 extension。",
+      "participatesInDiff": false,
+      "derived": false,
+      "controlledCode": false,
+      "humanSupplied": true,
+      "basis": "经验推断"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+# 运行时与本机配置（凭据绝不进仓库）
+.env
+.env.*
+!.env.example
+
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# 运行时数据与日志
+data/
+logs/
+*.log
+run-log/
+run-logs/
+*.tmp
+*.temp
+
+# 缓存
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# round 元数据（不属于发布产物）
+score.json
+
+# 编辑器与系统文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# 注意：qrcode.jpg 与 docs/screenshots/ 下的实测截图必须随仓库发布，不要在此排除

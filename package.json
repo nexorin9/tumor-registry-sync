@@ -1,0 +1,30 @@
+{
+  "name": "tumor-registry-sync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "肿瘤登记增量同步：表格内插件 + 本机 Node/TS 引擎，按登记主索引批量检索院内权威记录，逐字段算最小差异，人工确认后只把变化字段推送专病库登记接口",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "tumor-registry-sync": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "cli": "node --experimental-strip-types src/cli.ts",
+    "gen:samples": "node dist/scripts/gen-samples.js",
+    "dev": "vitest --watch"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.9"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "version": "0.1.0",
+  "basis": "经验推断",
+  "note": "字段路径映射表（三段）：登记列名 ↔ 口径字段名 ↔ 院内资源路径。三条硬规矩 —— ① 口径表声明参与比对的字段，这里必须有条目，缺了就报错并点名缺哪个口径字段，不许「这一列先不比」；② 同一资源路径命中多条院内资源时，取值不一致判歧义、不产出院内值，绝不取第一条；③ 人工补充列（随访电话、生活方式备注）只读不覆盖、不参与比对，映射表里不得声明院内资源路径。multiplicity 写清该路径可能命中几条：single = 同一行只应命中一次（命中多条即歧义），many = 允许多条但取值必须一致。derived=true 表示该字段的取值由派生层按口径算出（从多条就诊里挑一条），不直接读资源字段。口径依据：肿瘤登记的院内资源承载方式无权威资产可依（domain/ 资产层不收录肿瘤登记条目），本表逐项标注 (经验推断)；严禁虚构分期编码位数、目录结构或量限数字。",
+  "entries": [
+    {
+      "field": "登记号",
+      "column": "登记号",
+      "resourceType": "Patient",
+      "resourcePath": "identifier",
+      "derived": false,
+      "multiplicity": "many",
+      "controlledCode": false,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "分期",
+      "column": "分期",
+      "resourceType": "Condition",
+      "resourcePath": "stage",
+      "derived": false,
+      "multiplicity": "many",
+      "controlledCode": true,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "治疗方案",
+      "column": "治疗方案",
+      "resourceType": null,
+      "resourcePath": null,
+      "derived": false,
+      "multiplicity": "many",
+      "controlledCode": true,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "首次入院日",
+      "column": null,
+      "resourceType": "Encounter",
+      "resourcePath": "period.start",
+      "derived": true,
+      "multiplicity": "many",
+      "controlledCode": false,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "本次就诊开始",
+      "column": null,
+      "resourceType": "Encounter",
+      "resourcePath": "period.start",
+      "derived": true,
+      "multiplicity": "many",
+      "controlledCode": false,
+      "humanSupplied": false,
+      "basis": "经验推断"
+    },
+    {
+      "field": "随访电话",
+      "column": "随访电话",
+      "resourceType": null,
+      "resourcePath": null,
+      "derived": false,
+      "multiplicity": "many",
+      "controlledCode": false,
+      "humanSupplied": true,
+      "basis": "经验推断"
+    },
+    {
+      "field": "生活方式备注",
+      "column": "生活方式备注",
+      "resourceType": null,
+      "resourcePath": null,
+      "derived": false,
+      "multiplicity": "many",
+      "controlledCode": false,
+      "humanSupplied": true,
+      "basis": "经验推断"
+    }
+  ]
+}

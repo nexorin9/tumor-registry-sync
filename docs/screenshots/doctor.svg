@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="1520" viewBox="0 0 755 1520" font-family="ui-monospace, Menlo, Monaco, 'DejaVu Sans Mono', 'PingFang SC', 'Hiragino Sans GB', monospace">
+<rect width="755" height="1520" fill="#0d1117"/>
+<rect width="755" height="30" fill="#161b22"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/><circle cx="32" cy="15" r="5" fill="#ffbd2e"/><circle cx="48" cy="15" r="5" fill="#27c93f"/>
+<text x="66" y="20" fill="#8b949e" font-size="12">doctor — 环境变量与配置体检</text>
+<text x="14" y="46" fill="#c9d1d9" font-size="12.5" xml:space="preserve">$ node dist/cli.js doctor</text>
+<text x="14" y="64" fill="#c9d1d9" font-size="12.5" xml:space="preserve"> </text>
+<text x="14" y="82" fill="#c9d1d9" font-size="12.5" xml:space="preserve">--- exit code: 0 ---</text>
+<text x="14" y="100" fill="#c9d1d9" font-size="12.5" xml:space="preserve">{</text>
+<text x="14" y="118" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;ok&quot;: true,</text>
+<text x="14" y="136" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;command&quot;: &quot;doctor&quot;,</text>
+<text x="14" y="154" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;batchKey&quot;: null,</text>
+<text x="14" y="172" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;result&quot;: {</text>
+<text x="14" y="190" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;checkedAt&quot;: &quot;2026-11-08T14:01:59.830Z&quot;,</text>
+<text x="14" y="208" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;variables&quot;: [</text>
+<text x="14" y="226" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="244" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;CDR_BASE_URL&quot;,</text>
+<text x="14" y="262" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;院内 FHIR 服务基地址&quot;,</text>
+<text x="14" y="280" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: true,</text>
+<text x="14" y="298" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: true,</text>
+<text x="14" y="316" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="334" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="352" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="370" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;CDR_API_TOKEN&quot;,</text>
+<text x="14" y="388" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;院内 FHIR 服务令牌&quot;,</text>
+<text x="14" y="406" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: true,</text>
+<text x="14" y="424" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: true,</text>
+<text x="14" y="442" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="460" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="478" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="496" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;CDR_IDENTIFIER_SYSTEM&quot;,</text>
+<text x="14" y="514" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;登记主索引 identifier system&quot;,</text>
+<text x="14" y="532" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: true,</text>
+<text x="14" y="550" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: true,</text>
+<text x="14" y="568" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="586" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="604" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="622" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;REGISTRY_BASE_URL&quot;,</text>
+<text x="14" y="640" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;专病库登记接口基地址&quot;,</text>
+<text x="14" y="658" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: true,</text>
+<text x="14" y="676" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: true,</text>
+<text x="14" y="694" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="712" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="730" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="748" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;REGISTRY_API_TOKEN&quot;,</text>
+<text x="14" y="766" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;专病库登记接口令牌&quot;,</text>
+<text x="14" y="784" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: true,</text>
+<text x="14" y="802" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: true,</text>
+<text x="14" y="820" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="838" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="856" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="874" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;MODEL_BASE_URL&quot;,</text>
+<text x="14" y="892" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;模型网关 base_url&quot;,</text>
+<text x="14" y="910" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: false,</text>
+<text x="14" y="928" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: false,</text>
+<text x="14" y="946" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="964" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="982" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="1000" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;MODEL_API_KEY&quot;,</text>
+<text x="14" y="1018" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;模型网关 api_key&quot;,</text>
+<text x="14" y="1036" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: false,</text>
+<text x="14" y="1054" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: false,</text>
+<text x="14" y="1072" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="1090" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="1108" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="1126" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;MODEL_NAME&quot;,</text>
+<text x="14" y="1144" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;模型名&quot;,</text>
+<text x="14" y="1162" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: false,</text>
+<text x="14" y="1180" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: false,</text>
+<text x="14" y="1198" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="1216" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      },</text>
+<text x="14" y="1234" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      {</text>
+<text x="14" y="1252" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;name&quot;: &quot;MODEL_TIMEOUT_MS&quot;,</text>
+<text x="14" y="1270" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;label&quot;: &quot;模型调用超时（毫秒）&quot;,</text>
+<text x="14" y="1288" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;required&quot;: false,</text>
+<text x="14" y="1306" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;configured&quot;: false,</text>
+<text x="14" y="1324" fill="#c9d1d9" font-size="12.5" xml:space="preserve">        &quot;isPlaceholder&quot;: false</text>
+<text x="14" y="1342" fill="#c9d1d9" font-size="12.5" xml:space="preserve">      }</text>
+<text x="14" y="1360" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    ],</text>
+<text x="14" y="1378" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;missing&quot;: [],</text>
+<text x="14" y="1396" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;invalid&quot;: [],</text>
+<text x="14" y="1414" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;modelConfigured&quot;: false,</text>
+<text x="14" y="1432" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;loadable&quot;: true,</text>
+<text x="14" y="1450" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;message&quot;: &quot;配置齐备，可以执行对齐与推送。&quot;</text>
+<text x="14" y="1468" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  }</text>
+<text x="14" y="1486" fill="#c9d1d9" font-size="12.5" xml:space="preserve">}</text>
+<text x="14" y="1504" fill="#c9d1d9" font-size="12.5" xml:space="preserve"> </text>
+</svg>

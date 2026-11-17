@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1",
+  "generator": "scripts/gen-samples",
+  "generatedWith": {
+    "rows": 120,
+    "seed": 20261101
+  },
+  "outDir": "/Users/kamini/Desktop/RUN/Agent-GIT-CLAUDE-gpt/projects/round_028_20261108_115936/tumor-registry-sync/samples/generated",
+  "files": {
+    "sheet": "sample.csv",
+    "mixed": "sample-gbk-utf8.csv",
+    "expectedDiffs": "expected-diffs.json",
+    "hospitalExpected": "hospital-expected.json",
+    "corpus": "corpus.json",
+    "manifest": "manifest.json"
+  },
+  "counts": {
+    "csvDataLines": 125,
+    "usableRows": 120,
+    "blockedRows": 4,
+    "blankLines": 1,
+    "corpusEntries": 67,
+    "operations": {
+      "add": 24,
+      "replace": 45,
+      "remove": 20
+    },
+    "status": {
+      "待确认": 68,
+      "无需确认": 27,
+      "需人工判定": 25
+    }
+  },
+  "conventions": {
+    "首次入院日": "min(encounters[].start) 的本地日期；多条就诊取最早一次（经验推断）",
+    "本次就诊开始": "最近一次 encounter 的 start（经验推断）",
+    "分期": "归并到受控编码后与院内值比较；归并不成功则不产出操作，标「需人工判定」",
+    "治疗方案": "归并到受控编码后与院内值比较；归并不成功则不产出操作，标「需人工判定」",
+    "随访电话": "人工补充列，只读不覆盖，不参与比对",
+    "生活方式备注": "人工补充列，只读不覆盖，不参与比对",
+    "操作类型": "登记侧为空而院内有值 = add；两侧都有值但不同 = replace；登记侧有值而院内缺失 = remove",
+    "expectedStatus": "有归并不成功的字段 = 需人工判定；否则有差异 = 待确认；无差异 = 无需确认",
+    "field": "field 用口径字段名（与列映射配置的 field 一致）；引擎输出的 path 由三段映射决定，比对时先映射回口径字段名"
+  },
+  "validation": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "rows_min",
+        "ok": true,
+        "detail": "可参与比对的行 120 行（请求 120 行），脏行 4 行"
+      },
+      {
+        "name": "corpus_coverage",
+        "ok": true,
+        "detail": "语料 67 条全部在样例表中出现"
+      },
+      {
+        "name": "corpus_size",
+        "ok": true,
+        "detail": "语料 67 条（下限 40 条）"
+      },
+      {
+        "name": "operation_types",
+        "ok": true,
+        "detail": "add 24 / replace 45 / remove 20"
+      },
+      {
+        "name": "dirty_rows",
+        "ok": true,
+        "detail": "空行 1 行；脏行错误码：MISSING_REGISTRY_ID、DUPLICATE_REGISTRY_ID、COLUMN_COUNT_MISMATCH"
+      },
+      {
+        "name": "dirty_id_collision",
+        "ok": true,
+        "detail": "脏行的登记号与可比对行不冲突"
+      },
+      {
+        "name": "expected_count",
+        "ok": true,
+        "detail": "期望可比对 120 条 + 阻断 4 条 = CSV 数据行 125 行减空行 1 行"
+      },
+      {
+        "name": "no_identifiers",
+        "ok": true,
+        "detail": "未发现未脱敏手机号、身份证号或姓名列"
+      },
+      {
+        "name": "mixed_encoding_safe",
+        "ok": true,
+        "detail": "GBK 段各字节段都不会被误判成 UTF-8"
+      },
+      {
+        "name": "mixed_encoding_decodes",
+        "ok": true,
+        "detail": "混编表被识别为 mixed 且逐字解回原文"
+      }
+    ]
+  },
+  "checksums": {
+    "sample.csv": "a543f1c5fcdb3262fb33c9364c580ced4b13d47ba2ef85e0e573f04893021f3d",
+    "sample-gbk-utf8.csv": "fe441e99a9719bd87b1044e42c8ef4708871a6fd6e44c8ad61d7f1894de60a5a",
+    "expected-diffs.json": "57dca1c813d57f4cfe2c61623be579a9bd5226102ebb93e1e0bbf2fdbc522bed",
+    "hospital-expected.json": "1e028fb95516bc5c855379ac0fc2c4765d8a57660ab98064756b02e6facacc66",
+    "corpus.json": "ddce3660eb3f33c1ea15b2754aace19c4b526af9d00f7a801b1e8aaed6b09bb0"
+  },
+  "note": "本目录是验证用数据集（脱敏登记表样例 + 归并语料 + 期望差异集），不是产品的最终对接方式；真实对接仍是院内 CDR 的 FHIR R4 只读接口与专病库登记接口。"
+}

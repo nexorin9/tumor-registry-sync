@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="530" viewBox="0 0 755 530" font-family="ui-monospace, Menlo, Monaco, 'DejaVu Sans Mono', 'PingFang SC', 'Hiragino Sans GB', monospace">
+<rect width="755" height="530" fill="#0d1117"/>
+<rect width="755" height="30" fill="#161b22"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/><circle cx="32" cy="15" r="5" fill="#ffbd2e"/><circle cx="48" cy="15" r="5" fill="#27c93f"/>
+<text x="66" y="20" fill="#8b949e" font-size="12">align --out-csv — 真实导出的结果表（五列新列 + 回执区 + 缺行区）</text>
+<text x="14" y="46" fill="#c9d1d9" font-size="12.5" xml:space="preserve">登记号,分期,治疗方案,随访电话,生活方式备注,院内值,差异,建议值,确认,AI 说明</text>
+<text x="14" y="64" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-001,II,术后辅助化疗,138****0001,吸烟史,登记号=REG-DEMO-001；分期=IIIB；首次入院日=2</text>
+<text x="14" y="82" fill="#c9d1d9" font-size="12.5" xml:space="preserve">023-11-02；本次就诊开始=2025-02-18,分期：II → IIIB（修改）,分期：建议改为「IIIB」,待确认,字</text>
+<text x="14" y="100" fill="#c9d1d9" font-size="12.5" xml:space="preserve">段口径不一致，请人工核对（模型未启用）</text>
+<text x="14" y="118" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-002,IIIA,新辅助化疗,138****0002,戒烟,登记号=REG-DEMO-002；分期=IIIC；首次入院日=202</text>
+<text x="14" y="136" fill="#c9d1d9" font-size="12.5" xml:space="preserve">4-05-20；本次就诊开始=2024-05-20,分期：IIIA → IIIC（修改）,分期：建议改为「IIIC」,待确认,字</text>
+<text x="14" y="154" fill="#c9d1d9" font-size="12.5" xml:space="preserve">段口径不一致，请人工核对（模型未启用）</text>
+<text x="14" y="172" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-003,IV,免疫治疗,138****0003,,登记号=REG-DEMO-003；分期=IV,与院内一致,,待确认,</text>
+<text x="14" y="190" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-004,I,根治术,138****0004,,登记号=REG-DEMO-004；分期=II；首次入院日=2024-08-10；本次</text>
+<text x="14" y="208" fill="#c9d1d9" font-size="12.5" xml:space="preserve">就诊开始=2024-08-10,分期：I → II（修改）,分期：建议改为「II」,待确认,字段口径不一致，请人工</text>
+<text x="14" y="226" fill="#c9d1d9" font-size="12.5" xml:space="preserve">核对（模型未启用）</text>
+<text x="14" y="244" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-005,III,姑息治疗,138****0005,,,院内无此登记号,,待确认,</text>
+<text x="14" y="262" fill="#c9d1d9" font-size="12.5" xml:space="preserve">【推送回执】,明细字段：登记号｜行号｜状态｜原因｜幂等键｜尝试次数｜推送时刻,,,,,,,,</text>
+<text x="14" y="280" fill="#c9d1d9" font-size="12.5" xml:space="preserve">&quot;批次键=186e3ea1ae2c8a3b97350b70803c31b70efdc0efee97c0699e2f9e6e6ce8bfda ｜推送时刻=未推送 </text>
+<text x="14" y="298" fill="#c9d1d9" font-size="12.5" xml:space="preserve">｜检索参数串=REG-DEMO-001 :: Patient?identifier=urn:oid:1.2.3|REG-DEMO-001#1 ; Condition?sub</text>
+<text x="14" y="316" fill="#c9d1d9" font-size="12.5" xml:space="preserve">ject=Patient/P1#1 ; Encounter?patient=Patient/P1#1</text>
+<text x="14" y="334" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-002 :: Patient?identifier=urn:oid:1.2.3|REG-DEMO-002#1 ; Condition?subject=Patient/</text>
+<text x="14" y="352" fill="#c9d1d9" font-size="12.5" xml:space="preserve">P2#1 ; Encounter?patient=Patient/P2#1</text>
+<text x="14" y="370" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-003 :: Patient?identifier=urn:oid:1.2.3|REG-DEMO-003#1 ; Condition?subject=Patient/</text>
+<text x="14" y="388" fill="#c9d1d9" font-size="12.5" xml:space="preserve">P3#1 ; Encounter?patient=Patient/P3#1</text>
+<text x="14" y="406" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-004 :: Patient?identifier=urn:oid:1.2.3|REG-DEMO-004#1 ; Condition?subject=Patient/</text>
+<text x="14" y="424" fill="#c9d1d9" font-size="12.5" xml:space="preserve">P4#1 ; Encounter?patient=Patient/P4#1</text>
+<text x="14" y="442" fill="#c9d1d9" font-size="12.5" xml:space="preserve">REG-DEMO-005 :: Patient?identifier=urn:oid:1.2.3|REG-DEMO-005#1 ｜已推送=0 ｜待确认=4 ｜失败</text>
+<text x="14" y="460" fill="#c9d1d9" font-size="12.5" xml:space="preserve">=0 ｜待重试=0 ｜缺行=0 ｜问题行=0&quot;,,,,,,,,,</text>
+<text x="14" y="478" fill="#c9d1d9" font-size="12.5" xml:space="preserve">【院内命中但本表缺行】,明细字段：登记号｜来源｜状态｜确认,,,,,,,,</text>
+<text x="14" y="496" fill="#c9d1d9" font-size="12.5" xml:space="preserve">缺行=0 ｜不自动入表，需登记员人工核对后补行,,,,,,,,,</text>
+<text x="14" y="514" fill="#c9d1d9" font-size="12.5" xml:space="preserve"> </text>
+</svg>

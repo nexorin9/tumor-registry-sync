@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "registryIdColumn": "登记号",
+  "columns": [
+    {
+      "field": "分期",
+      "sourceColumn": "分期",
+      "description": "登记员填写的分期自由写法（ⅢB / IIIB / III B 等），归并到院内受控编码后参与比对（经验推断）",
+      "humanSupplied": false,
+      "required": false,
+      "controlledCode": true
+    },
+    {
+      "field": "治疗方案",
+      "sourceColumn": "治疗方案",
+      "description": "登记员填写的治疗方案自由写法，归并到院内受控编码后参与比对（经验推断）",
+      "humanSupplied": false,
+      "required": false,
+      "controlledCode": true
+    },
+    {
+      "field": "随访电话",
+      "sourceColumn": "随访电话",
+      "description": "登记员人工补充的随访联系方式，插件只读不覆盖、不参与比对",
+      "humanSupplied": true,
+      "required": false,
+      "controlledCode": false
+    },
+    {
+      "field": "生活方式备注",
+      "sourceColumn": "生活方式备注",
+      "description": "登记员人工补充的生活方式备注，插件只读不覆盖、不参与比对",
+      "humanSupplied": true,
+      "required": false,
+      "controlledCode": false
+    }
+  ]
+}

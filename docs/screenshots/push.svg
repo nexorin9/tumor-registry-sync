@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="386" viewBox="0 0 755 386" font-family="ui-monospace, Menlo, Monaco, 'DejaVu Sans Mono', 'PingFang SC', 'Hiragino Sans GB', monospace">
+<rect width="755" height="386" fill="#0d1117"/>
+<rect width="755" height="30" fill="#161b22"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/><circle cx="32" cy="15" r="5" fill="#ffbd2e"/><circle cx="48" cy="15" r="5" fill="#27c93f"/>
+<text x="66" y="20" fill="#8b949e" font-size="12">push — 按确认闸门推送 · 逐行回执</text>
+<text x="14" y="46" fill="#c9d1d9" font-size="12.5" xml:space="preserve">$ node dist/cli.js push --in /Users/kamini/Desktop/RUN/Agent-GIT-CLAUDE-gpt/projects/round_0</text>
+<text x="14" y="64" fill="#c9d1d9" font-size="12.5" xml:space="preserve">28_20261108_115936/logs/demo-adopted.json --out /Users/kamini/Desktop/RUN/Agent-GIT-CLAUDE-g</text>
+<text x="14" y="82" fill="#c9d1d9" font-size="12.5" xml:space="preserve">pt/projects/round_028_20261108_115936/logs/demo-push-result.json</text>
+<text x="14" y="100" fill="#c9d1d9" font-size="12.5" xml:space="preserve"> </text>
+<text x="14" y="118" fill="#c9d1d9" font-size="12.5" xml:space="preserve">--- exit code: 0 ---</text>
+<text x="14" y="136" fill="#c9d1d9" font-size="12.5" xml:space="preserve">{</text>
+<text x="14" y="154" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;ok&quot;: true,</text>
+<text x="14" y="172" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;command&quot;: &quot;push&quot;,</text>
+<text x="14" y="190" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;batchKey&quot;: &quot;186e3ea1ae2c8a3b97350b70803c31b70efdc0efee97c0699e2f9e6e6ce8bfda&quot;,</text>
+<text x="14" y="208" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  &quot;result&quot;: {</text>
+<text x="14" y="226" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;outputPath&quot;: &quot;/Users/kamini/Desktop/RUN/Agent-GIT-CLAUDE-gpt/projects/round_028_2026110</text>
+<text x="14" y="244" fill="#c9d1d9" font-size="12.5" xml:space="preserve">8_115936/logs/demo-push-result.json&quot;,</text>
+<text x="14" y="262" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;pushed&quot;: 2,</text>
+<text x="14" y="280" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;failed&quot;: 0,</text>
+<text x="14" y="298" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;pendingRetry&quot;: 0,</text>
+<text x="14" y="316" fill="#c9d1d9" font-size="12.5" xml:space="preserve">    &quot;dryRun&quot;: false</text>
+<text x="14" y="334" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  }</text>
+<text x="14" y="352" fill="#c9d1d9" font-size="12.5" xml:space="preserve">}</text>
+<text x="14" y="370" fill="#c9d1d9" font-size="12.5" xml:space="preserve"> </text>
+</svg>

@@ -1,0 +1,471 @@
+[
+  {
+    "field": "分期",
+    "raw": "I",
+    "kind": "受控编码",
+    "expectedCode": "I",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅰ",
+    "kind": "书写变体",
+    "expectedCode": "I",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "I期",
+    "kind": "书写变体",
+    "expectedCode": "I",
+    "note": "带「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅰ期",
+    "kind": "书写变体",
+    "expectedCode": "I",
+    "note": "罗马数字 + 「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "II",
+    "kind": "受控编码",
+    "expectedCode": "II",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅱ",
+    "kind": "书写变体",
+    "expectedCode": "II",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "II期",
+    "kind": "书写变体",
+    "expectedCode": "II",
+    "note": "带「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅱ期",
+    "kind": "书写变体",
+    "expectedCode": "II",
+    "note": "罗马数字 + 「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "III",
+    "kind": "受控编码",
+    "expectedCode": "III",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅲ",
+    "kind": "书写变体",
+    "expectedCode": "III",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "III期",
+    "kind": "书写变体",
+    "expectedCode": "III",
+    "note": "带「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅲ期",
+    "kind": "书写变体",
+    "expectedCode": "III",
+    "note": "罗马数字 + 「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "IIIA",
+    "kind": "受控编码",
+    "expectedCode": "IIIA",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅢA",
+    "kind": "书写变体",
+    "expectedCode": "IIIA",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "III A",
+    "kind": "书写变体",
+    "expectedCode": "IIIA",
+    "note": "中间带空格"
+  },
+  {
+    "field": "分期",
+    "raw": "IIIA期",
+    "kind": "书写变体",
+    "expectedCode": "IIIA",
+    "note": "带「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅢＡ",
+    "kind": "书写变体",
+    "expectedCode": "IIIA",
+    "note": "全角字母"
+  },
+  {
+    "field": "分期",
+    "raw": "IIIB",
+    "kind": "受控编码",
+    "expectedCode": "IIIB",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅢB",
+    "kind": "书写变体",
+    "expectedCode": "IIIB",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "III B",
+    "kind": "书写变体",
+    "expectedCode": "IIIB",
+    "note": "中间带空格"
+  },
+  {
+    "field": "分期",
+    "raw": "IIIB期",
+    "kind": "书写变体",
+    "expectedCode": "IIIB",
+    "note": "带「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅢＢ",
+    "kind": "书写变体",
+    "expectedCode": "IIIB",
+    "note": "全角字母"
+  },
+  {
+    "field": "分期",
+    "raw": "III B 期",
+    "kind": "书写变体",
+    "expectedCode": "IIIB",
+    "note": "前后带空格"
+  },
+  {
+    "field": "分期",
+    "raw": "IIIC",
+    "kind": "受控编码",
+    "expectedCode": "IIIC",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅢC",
+    "kind": "书写变体",
+    "expectedCode": "IIIC",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "III C",
+    "kind": "书写变体",
+    "expectedCode": "IIIC",
+    "note": "中间带空格"
+  },
+  {
+    "field": "分期",
+    "raw": "IV",
+    "kind": "受控编码",
+    "expectedCode": "IV",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅳ",
+    "kind": "书写变体",
+    "expectedCode": "IV",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "IV期",
+    "kind": "书写变体",
+    "expectedCode": "IV",
+    "note": "带「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "Ⅳ期",
+    "kind": "书写变体",
+    "expectedCode": "IV",
+    "note": "罗马数字 + 「期」字"
+  },
+  {
+    "field": "分期",
+    "raw": "IVA",
+    "kind": "受控编码",
+    "expectedCode": "IVA",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅣA",
+    "kind": "书写变体",
+    "expectedCode": "IVA",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "IV B",
+    "kind": "书写变体",
+    "expectedCode": "IVB",
+    "note": "中间带空格"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅣB",
+    "kind": "书写变体",
+    "expectedCode": "IVB",
+    "note": "罗马数字写法"
+  },
+  {
+    "field": "分期",
+    "raw": "IVC",
+    "kind": "受控编码",
+    "expectedCode": "IVC",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "分期",
+    "raw": "ⅣＣ",
+    "kind": "书写变体",
+    "expectedCode": "IVC",
+    "note": "罗马数字 + 全角字母"
+  },
+  {
+    "field": "分期",
+    "raw": "晚期",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "开放类目，未落到期别"
+  },
+  {
+    "field": "分期",
+    "raw": "进展期",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "开放类目，未落到期别"
+  },
+  {
+    "field": "分期",
+    "raw": "不明确",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "登记员未确定，需人工判定"
+  },
+  {
+    "field": "分期",
+    "raw": "待定",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "登记员未确定，需人工判定"
+  },
+  {
+    "field": "分期",
+    "raw": "复发未分期",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "含复发信息但无期别"
+  },
+  {
+    "field": "分期",
+    "raw": "IIIB?",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "带问号，登记员存疑"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "术后辅助化疗",
+    "kind": "受控编码",
+    "expectedCode": "术后辅助化疗",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "术后化疗",
+    "kind": "同义写法",
+    "expectedCode": "术后辅助化疗",
+    "note": "省略「辅助」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "辅助化疗",
+    "kind": "同义写法",
+    "expectedCode": "术后辅助化疗",
+    "note": "省略「术后」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "术后辅助化学治疗",
+    "kind": "同义写法",
+    "expectedCode": "术后辅助化疗",
+    "note": "「化学治疗」=「化疗」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "术后 化疗",
+    "kind": "书写变体",
+    "expectedCode": "术后辅助化疗",
+    "note": "中间带空格"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "新辅助化疗",
+    "kind": "受控编码",
+    "expectedCode": "新辅助化疗",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "术前化疗",
+    "kind": "同义写法",
+    "expectedCode": "新辅助化疗",
+    "note": "「术前」=「新辅助」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "新辅助化学治疗",
+    "kind": "同义写法",
+    "expectedCode": "新辅助化疗",
+    "note": "「化学治疗」=「化疗」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "姑息治疗",
+    "kind": "受控编码",
+    "expectedCode": "姑息治疗",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "姑息化疗",
+    "kind": "同义写法",
+    "expectedCode": "姑息治疗",
+    "note": "姑息意图下的化疗"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "姑息性治疗",
+    "kind": "同义写法",
+    "expectedCode": "姑息治疗",
+    "note": "省略「性」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "根治术",
+    "kind": "受控编码",
+    "expectedCode": "根治术",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "根治性手术",
+    "kind": "同义写法",
+    "expectedCode": "根治术",
+    "note": "「根治性手术」=「根治术」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "根治性切除术",
+    "kind": "同义写法",
+    "expectedCode": "根治术",
+    "note": "「根治性切除术」=「根治术」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "免疫治疗",
+    "kind": "受控编码",
+    "expectedCode": "免疫治疗",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "免疫检查点抑制剂治疗",
+    "kind": "同义写法",
+    "expectedCode": "免疫治疗",
+    "note": "免疫检查点抑制剂属免疫治疗"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "放疗",
+    "kind": "受控编码",
+    "expectedCode": "放疗",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "放射治疗",
+    "kind": "同义写法",
+    "expectedCode": "放疗",
+    "note": "「放射治疗」=「放疗」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "靶向治疗",
+    "kind": "受控编码",
+    "expectedCode": "靶向治疗",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "分子靶向治疗",
+    "kind": "同义写法",
+    "expectedCode": "靶向治疗",
+    "note": "「分子靶向治疗」=「靶向治疗」"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "化疗",
+    "kind": "受控编码",
+    "expectedCode": "化疗",
+    "note": "原样即受控编码"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "姑息对症",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "支持治疗意图，非治疗方案类目"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "MDT讨论后定",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "尚未确定方案"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "个体化方案",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "开放表述，需人工判定"
+  },
+  {
+    "field": "治疗方案",
+    "raw": "待MDT",
+    "kind": "不可归并",
+    "expectedCode": null,
+    "note": "尚未确定方案"
+  }
+]

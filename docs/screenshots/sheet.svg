@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="188" viewBox="0 0 755 188" font-family="ui-monospace, Menlo, Monaco, 'DejaVu Sans Mono', 'PingFang SC', 'Hiragino Sans GB', monospace">
+<rect width="755" height="188" fill="#0d1117"/>
+<rect width="755" height="30" fill="#161b22"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/><circle cx="32" cy="15" r="5" fill="#ffbd2e"/><circle cx="48" cy="15" r="5" fill="#27c93f"/>
+<text x="66" y="20" fill="#8b949e" font-size="12">sheet — 读表规范化与行级问题清单</text>
+<text x="14" y="46" fill="#c9d1d9" font-size="12.5" xml:space="preserve">$ node dist/cli.js sheet --in 登记表.csv --checklist 待人工处理清单.csv</text>
+<text x="14" y="64" fill="#c9d1d9" font-size="12.5" xml:space="preserve">-&gt; ok=true  规范化行数=5</text>
+<text x="14" y="82" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  行2 登记号=REG-DEMO-001 阻塞=False 问题=0</text>
+<text x="14" y="100" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  行3 登记号=REG-DEMO-002 阻塞=False 问题=0</text>
+<text x="14" y="118" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  行4 登记号=REG-DEMO-003 阻塞=False 问题=0</text>
+<text x="14" y="136" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  行5 登记号=REG-DEMO-004 阻塞=False 问题=0</text>
+<text x="14" y="154" fill="#c9d1d9" font-size="12.5" xml:space="preserve">  行6 登记号=REG-DEMO-005 阻塞=False 问题=0</text>
+<text x="14" y="172" fill="#c9d1d9" font-size="12.5" xml:space="preserve">待人工处理清单：无（脏行已逐个标注）</text>
+</svg>

@@ -1,0 +1,39 @@
+肿瘤登记增量同步（tumor-registry-sync）— 收尾进度记录
+=====================================================
+
+完成状态：52 / 52 任务全部 passes=true（含证据 proof 字符串）。
+最后更新：2026-11-08
+
+一、测试证据（真实运行）
+----------------------
+- npx tsc --noEmit：0 错误（strict + noUncheckedIndexedAccess）。
+- npx vitest run：66 文件 / 743 用例通过，0 失败。
+- npm run build：tsc 编译 dist/cli.js 通过。
+- 全量核验脚本 bash scripts/verify.sh：
+  install → 配置校验(config/*.json 合法) → 类型检查 → 构建 → 测试 →
+  端到端采集 → 产物核验，全绿。日志：logs/verify-20261108-220813.log。
+
+二、三入口等价性 / 端到端 / 规模
+------------------------------
+- tests/e2e/equivalence：CSV 直跑 / Excel 宏 / WPS 宏 共用同一 JSON 契约。
+- tests/e2e/main-path：登记表→检索→差异→确认→推送→回执 主路径回放通过。
+- tests/e2e/failure-matrix：CDR auth/500/timeout、registry 500 失败矩阵，失败如实上报不静默。
+- tests/e2e/scale-300：300 行 align 完成、行数完整、耗时 389ms。
+- tests/e2e/perf-stability / baseline-diff：性能回归与核心差异化对照基线。
+
+三、真实运行截图（非设计稿）
+--------------------------
+- scripts/capture-screenshots.mjs 起本地 FHIR 替身，对脱敏样例 REG-DEMO-* 跑生产 CLI。
+- 终端会话原文：logs/tr-01-doctor.txt … tr-05-summary.txt。
+- 渲染截图：docs/screenshots/{doctor,sheet,align,push,summary,result-table}.svg。
+- 真实 push 结果：pushed=2 failed=0（REG-DEMO-001/002 采纳后外发）。
+
+四、文档与诚实标注
+------------------
+- README.md 两段占位符（视觉目标 / 实测证据）已填实，引用 docs/concepts/visual-target.md 与 docs/screenshots/。
+- 视觉目标卡为设计意图；实测截图为真实运行；两者必然有差距，以实测为准（README「概念/实测对照」已标注）。
+
+五、可重复验证
+----------------
+- scripts/verify.sh（编排）+ scripts/verify-artifacts.mjs（产物核验：5 份会话原文 + 6 张 SVG + push pushed>=1/failed=0 + 结果表 10 列）。
+- 重新运行：bash scripts/verify.sh

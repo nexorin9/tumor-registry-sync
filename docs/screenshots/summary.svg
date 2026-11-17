@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="134" viewBox="0 0 755 134" font-family="ui-monospace, Menlo, Monaco, 'DejaVu Sans Mono', 'PingFang SC', 'Hiragino Sans GB', monospace">
+<rect width="755" height="134" fill="#0d1117"/>
+<rect width="755" height="30" fill="#161b22"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/><circle cx="32" cy="15" r="5" fill="#ffbd2e"/><circle cx="48" cy="15" r="5" fill="#27c93f"/>
+<text x="66" y="20" fill="#8b949e" font-size="12">summary — 本周期同步摘要</text>
+<text x="14" y="46" fill="#c9d1d9" font-size="12.5" xml:space="preserve">$ node dist/cli.js summary --in 结果.json</text>
+<text x="14" y="64" fill="#c9d1d9" font-size="12.5" xml:space="preserve">{&quot;total&quot;: 5, &quot;matched&quot;: 4, &quot;ambiguous&quot;: 0, &quot;noMatch&quot;: 1, &quot;diffRows&quot;: 3, &quot;pendingConfirm&quot;: 4,</text>
+<text x="14" y="82" fill="#c9d1d9" font-size="12.5" xml:space="preserve"> &quot;adopted&quot;: 0, &quot;pushed&quot;: 0, &quot;failed&quot;: 0, &quot;pendingRetry&quot;: 0, &quot;missingRows&quot;: 0, &quot;issueRows&quot;: 0</text>
+<text x="14" y="100" fill="#c9d1d9" font-size="12.5" xml:space="preserve">, &quot;missingCheckIncomplete&quot;: false}</text>
+<text x="14" y="118" fill="#c9d1d9" font-size="12.5" xml:space="preserve">逐行状态：</text>
+</svg>
